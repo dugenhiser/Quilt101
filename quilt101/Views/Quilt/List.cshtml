@@ -1,0 +1,19 @@
+﻿@model QuilstListViewModel
+
+
+    @foreach (var quilt in Model.Quilts)
+    {
+       <div class="col-sm-4 col-lg-4 col-md-4">
+           <div class="thumbnail">
+                <img src="@quilt.ImageUrl.Replace("\\","\\\\")" />
+           <div class="caption">
+               <h3 class="pull-right">@quilt.Price</h3>
+               <h3>
+                  @quilt.Name
+               </h3>
+               <p>@quilt.ShortDescription</p>
+           </div>
+            </div>
+       </div>
+       
+    }
