@@ -14,7 +14,7 @@ namespace quilt101.Models
 
         }
 
-        public DbSet<Catergory> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         public DbSet<Quilt> Quilts {get; set;}
     }

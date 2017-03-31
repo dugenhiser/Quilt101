@@ -7,15 +7,15 @@ namespace quilt101.Model
 {
     public class MockCategoryRepository: ICategoryRepository
     {
-        public IEnumerable<Catergory> Categories
+        public IEnumerable<Category> Categories
         {
             get
             {
-                return new List<Catergory>
+                return new List<Category>
                 {
-                    new Catergory{CategoryId=1, CaegoryName="Numba one", Desription="Double Striped Colors" },
-                    new Catergory{CategoryId=1, CaegoryName="Numba two", Desription="Double Striped Colors" },
-                    new Catergory{CategoryId=1, CaegoryName="Numba Three", Desription="Double Striped Colors" }
+                    new Category{CategoryId=1, CategoryName="Numba one", Desription="Double Striped Colors" },
+                    new Category{CategoryId=1, CategoryName="Numba two", Desription="Double Striped Colors" },
+                    new Category{CategoryId=1, CategoryName="Numba Three", Desription="Double Striped Colors" }
 
                 };
 

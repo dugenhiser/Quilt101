@@ -14,8 +14,8 @@ namespace quilt101.Model
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public string ThumbNailUrl { get; set; }
-        public bool InStock { get; set; }
-        public int CategoryId { get; set; }
-        public virtual Catergory Catergory { get; set; }
+        
+      
+        public virtual Category Category { get; set; }
     }
 }

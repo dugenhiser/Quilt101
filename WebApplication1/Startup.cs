@@ -7,21 +7,19 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
-using quilt101.Model;
-using quilt101.Models;
 
-namespace quilt101
+namespace WebApplication1
 {
     public class Startup
     {
-        private IConfigurationRoot _configurationRoot;
         public Startup(IHostingEnvironment env)
         {
-            _configurationRoot = new ConfigurationBuilder()
+            var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -30,17 +28,14 @@ namespace quilt101
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<AppDbContext>(options => 
-                                                    options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<IQuiltRepository, QuiltRepository>();
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, AppDbContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
             {
@@ -60,8 +55,6 @@ namespace quilt101
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-           DbInitializer.Seed(app);
         }
     }
 }

@@ -7,6 +7,6 @@ namespace quilt101.Model
 {
     public interface ICategoryRepository
     {
-        IEnumerable<Catergory> Categories { get; }
+        IEnumerable<Category> Categories { get; }
     }
 }
