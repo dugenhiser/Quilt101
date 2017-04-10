@@ -47,6 +47,12 @@ namespace quilt101.Controllers
 
             return View();
         }
+
+        public IActionResult Faberic()
+        {
+
+            return View("Faberic","_FullPageLayout.cshtml");
+        }
         public IActionResult Error()
         {
             return View();

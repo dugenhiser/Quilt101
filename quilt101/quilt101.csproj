@@ -28,6 +28,20 @@
     <Content Include="wwwroot\images\sweetStrawberry.jpg" />
     <Content Include="wwwroot\images\tickleMePink.jpg" />
     <Content Include="wwwroot\images\walkingOnSunshine.jpg" />
+    <Content Include="wwwroot\lib\jquery-fullpage\jquery.fullpage.css" />
+    <Content Include="wwwroot\lib\jquery-fullpage\jquery.fullpage.extensions.min.js" />
+    <Content Include="wwwroot\lib\jquery-fullpage\jquery.fullpage.js" />
+    <Content Include="wwwroot\lib\jquery-fullpage\jquery.fullpage.min.css" />
+    <Content Include="wwwroot\lib\jquery-fullpage\jquery.fullpage.min.css.map" />
+    <Content Include="wwwroot\lib\jquery-fullpage\jquery.fullpage.min.js" />
+    <Content Include="wwwroot\lib\jquery-fullpage\jquery.fullpage.min.js.map" />
+    <Content Include="wwwroot\lib\jquery.fullpage.css" />
+    <Content Include="wwwroot\lib\jquery.fullpage.extensions.min.js" />
+    <Content Include="wwwroot\lib\jquery.fullpage.js" />
+    <Content Include="wwwroot\lib\jquery.fullpage.min.css" />
+    <Content Include="wwwroot\lib\jquery.fullpage.min.css.map" />
+    <Content Include="wwwroot\lib\jquery.fullpage.min.js" />
+    <Content Include="wwwroot\lib\jquery.fullpage.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
