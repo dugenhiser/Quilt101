@@ -8,8 +8,8 @@ using quilt101.Models;
 namespace quilt101.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20170324041107_Initial")]
-    partial class Initial
+    [Migration("20170412175324_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
